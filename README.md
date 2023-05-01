@@ -1,2 +1,2 @@
 # blinkpy-camera-tools
-Small application.
+Small utility developed in Python to do certain function with your Blink doorbell. 
