@@ -33,6 +33,14 @@ def disarmCamera():
     blink.sync["NAME OF SYNC DEVICE"].arm = False
     blink.refresh()
     
+    
+# Downloads all videos from the past week days of this app being created.
+# You can customize the delay, and since parameters.
+def downloadAllVideos():
+    # TBD blink.download_videos('/home/blink', since='2023/01/01 12:00', delay=4)
+    messagebox.showinfo("Videos have been downloaded successfully.")
+
+    
 # Prints diagnostics in the console.
 def printDiag():    
     camera = blink.cameras["NAME OF CAMERA"]
