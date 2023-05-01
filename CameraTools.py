@@ -3,22 +3,20 @@ from tkinter import *
 from blinkpy.api import *
 import tkinter
 
-# Change 'NAME OF SYNC DEVICE' and 'NAME OF CAMERA' with your camera and sync devices, respectively.
+# Change 'NAME OF SYNC DEVICE' and 'NAME OF CAMERA' with your camera and sync devices, respectively. Learn more in the README.
 
-
-# Initialize our instances, Blink, tkinter, etc.
+# Initialize instances, Blink, tkinter, etc.
 blink = Blink()
 blink.start()
 screen = tkinter.Tk()
 
 
-# Placeholder, meant to print camera names and stuff.
+# When initialized, print some useful information.
 for name, camera in blink.cameras.items():
   print(name + ' loaded.')       
   camerastats = camera.attributes     
-  camerabattery = camera.battery   
- # print(camera.attributes)      
-
+  print(camera.attributes)     
+  print(camera.get_sensor_info())
 
 
 # Arms the camera by enabling motion alerts.
@@ -39,13 +37,6 @@ def disarmCamera():
 def downloadAllVideos():
     # TBD blink.download_videos('/home/blink', since='2023/01/01 12:00', delay=4)
     messagebox.showinfo("Videos have been downloaded successfully.")
-
-    
-# Prints diagnostics in the console.
-def printDiag():    
-    camera = blink.cameras["NAME OF CAMERA"]
-    print(camera.get_sensor_info())
-  
 
 # Initalize all UI elements here.
 top.title("Blinkpy Camera Control")
